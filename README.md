@@ -22,7 +22,7 @@ Used to Open the file for reading, writing or both.
 int open(char *path, int flags [ , int mode ] ); 
 ## Path : 
 Path to file which you want to use 
-## flags :
+## Flags :
 
 How you like to use ?
 
