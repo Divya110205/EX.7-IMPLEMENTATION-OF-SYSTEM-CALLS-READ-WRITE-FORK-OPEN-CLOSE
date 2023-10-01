@@ -72,8 +72,39 @@ cnt: length of buffer
    
 7. Stop the program.
 
-PROGRAM:
+### PROGRAM:
+```
+#include<sys/stat.h> 
+#include<stdio.h> 
+#include<fcntl.h> 
+#include<sys/types.h> 
+int main() 
+{ 
+int n,i=0; 
+int f1,f2; 
+char c,strin[100]; 
+f1=open("data",O_RDWR|O_CREAT|O_TRUNC); 
+while((c=getchar())!='\n') 
+{ 
+strin[i++]=c; 
+ 
+} 
+strin[i]='\0'; 
+write(f1,strin,i); 
+close(f1); 
+f2=open("data",O_RDONLY); 
+read(f2,strin,0); 
+printf("\n%s\n",strin); 
+close(f2); 
+fork(); 
+return 0; 
+ 
+}
+```
 
-OUTPUT:
+### OUTPUT:
+![EX07](https://github.com/Divya110205/EX.7-IMPLEMENTATION-OF-SYSTEM-CALLS-READ-WRITE-FORK-OPEN-CLOSE/assets/119404855/713c75d8-fdb9-4cab-ad29-e2f9be8f85fb)
 
-RESULT:
+### RESULT:
+Thus, open, read, write, close , create , fork() system calls implemented successfully using c 
+program.
